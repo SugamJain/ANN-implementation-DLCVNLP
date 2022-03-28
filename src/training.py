@@ -1,7 +1,7 @@
 import os
 from src.utils.common import read_config
 from src.utils.data_mgmt import get_data
-from src.utils.model import create_model, save_model
+from src.utils.model import created_model, save_model
 from src.utils.callbacks import get_callbacks
 import argparse
 
@@ -16,7 +16,7 @@ def training(config_path):
     METRICS = config["params"]["metrics"]
     NUM_CLASSES = config["params"]["num_classes"]
 
-    model = create_model(LOSS_FUNCTION, OPTIMIZER, METRICS, NUM_CLASSES)
+    model = created_model(LOSS_FUNCTION, OPTIMIZER, METRICS, NUM_CLASSES)
 
     EPOCHS = config["params"]["epochs"]
     VALIDATION_SET = (X_valid, y_valid)
